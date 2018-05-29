@@ -5,7 +5,7 @@ const request = new Fly()
 
 request.config.timeout = 10 * 1000
 
-request.config.baseURL = 'https://alfredyao.applinzi.com/api' // 本地代理
+request.config.baseURL = '此处填写你的已在微信后台配置过的请求地址' // 本地代理
 
 request.interceptors.request.use((request) => {
   wx.showLoading({title: '拼命加载中...'})
