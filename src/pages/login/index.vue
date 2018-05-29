@@ -63,7 +63,6 @@
         this.login({phoneNumber: this.phoneNumber, password: this.password})
       },
       _visitorLogin () {
-        console.log('visitorLogin')
       }
     }
   }
