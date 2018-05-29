@@ -10,7 +10,7 @@
         <div class="o-forget-password__input-area">
             <img class="o-forget-password__input-Icon" src="../../../static/images/verifiIcon.png" alt="">
             <input class="o-forget-password__input-text"  maxlength="6" v-model="validateCode" placeholder="验证码" type="text"/>
-            <config-button @clickButton="_getValidateCode" :btnMsg="btn.validate" :disaoed="btn.valdisaoed"></config-button>
+            <config-button @clickButton="_getValidateCode" :btnMsg="btn.validate" :disabled="btn.valdisabled"></config-button>
         </div>
         <div class="o-forget-password__input-area">
             <img class="o-forget-password__input-Icon" src="../../../static/images/pwdIcon.png" alt="">
@@ -41,8 +41,8 @@
     data () {
       return {
         'btn': {
-          'disaoed': false,
-          'valdisaoed': false,
+          'disabled': false,
+          'valdisabled': false,
           'submit': '提交',
           'validate': '获取验证码'
         },
@@ -63,10 +63,10 @@
         let si = setInterval(() => {
           this.btn.validate = `请等待...${this.count}s`
           if (this.count > 0) {
-            this.btn.valdisaoed = true
+            this.btn.valdisabled = true
             this.count -= 1
           } else {
-            this.btn.valdisaoed = false
+            this.btn.valdisabled = false
             this.btn.validate = '获取验证码'
             this.count = 60
             clearInterval(si)
